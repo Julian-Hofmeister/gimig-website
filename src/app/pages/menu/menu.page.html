@@ -1,0 +1,31 @@
+<ion-split-pane contentId="content">
+    <ion-menu>
+        <ion-content>
+            <ion-grid>
+                <ion-menu-toggle>
+                    <ion-icon name="chevron-back-outline"></ion-icon>
+                </ion-menu-toggle>
+                <h2>GIMIG</h2>
+                <ion-list class="bg-transparent">
+                    <ion-menu-toggle auto-hide="false" *ngFor="let page of pages">
+                        <ion-item color="none" lines="none" [routerLink]="page.url" routerDirection="root" [class.active-item]="selectedPath === page.url">
+                            {{page.title}}</ion-item>
+                    </ion-menu-toggle>
+                </ion-list>
+                <ion-row class="detail-row">
+                    <ion-col size="8">
+                        <ion-menu-toggle auto-hide="false">
+                            <p class="detail" routerLink="/menu/impressum" routerDirection="root">
+                                Impressum
+                            </p>
+                            <p class="detail" routerLink="/menu/datenschutz" routerDirection="root">
+                                Datenschutz
+                            </p>
+                        </ion-menu-toggle>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-content>
+    </ion-menu>
+    <ion-router-outlet id="content" main></ion-router-outlet>
+</ion-split-pane>
